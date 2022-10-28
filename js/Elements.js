@@ -128,7 +128,7 @@
 		switch(indexNum)
 		{
 			case IndexPhp:
-				return `<span class="badge bg-`+Llenguatges[1][0]+` text-dark" style="margin-right: 10px;">`+Llenguatges[0][0]+`</span>`;
+				return `<span class="badge bg-`+Llenguatges[1][0]+` text-light" style="margin-right: 10px;">`+Llenguatges[0][0]+`</span>`;
 			break;
 			case IndexJS:
 				return `<span class="badge bg-`+Llenguatges[1][1]+` text-dark" style="margin-right: 10px;">`+Llenguatges[0][1]+`</span>`;
