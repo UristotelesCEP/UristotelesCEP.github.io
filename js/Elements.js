@@ -110,7 +110,7 @@
 		let StringDeRetornoConLaLista = "";
 		StringDeRetornoConLaLista+=`<ul class="list-group">`;
 		for(cnt = 0; cnt < ListaElementos.length; cnt++){
-			let TempString = `<li class="list-group-item d-flex justify-content-between align-items-center">`+ CrearBadages(lenguages[cnt])+`<a href="`+Enlaces[cnt]+`"target="_blank">`+ListaElementos[cnt]+` </a> </li>`;
+			let TempString = `<li class="list-group-item d-flex justify-content-between align-items-center ">`+ CrearBadages(lenguages[cnt])+`<a href="`+Enlaces[cnt]+`"target="_blank">`+ListaElementos[cnt]+` </a> </li>`;
 			StringDeRetornoConLaLista += TempString;
 		}
 		StringDeRetornoConLaLista += `</ul>`;
@@ -147,4 +147,5 @@
 		
 		/*<span class="badge bg-warning text-dark">Warning</span>*/	
 	}
+	
 	
