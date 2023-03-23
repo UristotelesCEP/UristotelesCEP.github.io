@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <h1>${this.numero}-${this.nombre}</h1>
+    <p class="cw">${this.descripcionGeneral}</p>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="js-tab" data-bs-toggle="tab" data-bs-target="#js" type="button" role="tab" aria-controls="js" aria-selected="true">JS</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="html-tab" data-bs-toggle="tab" data-bs-target="#html" type="button" role="tab" aria-controls="html" aria-selected="false">HTML</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="css-tab" data-bs-toggle="tab" data-bs-target="#css" type="button" role="tab" aria-controls="css" aria-selected="false">CSS</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="js" role="tabpanel" aria-labelledby="js-tab">
+        ${this.explicacionJS.toBootstrapHtml()}
+      </div>
+      <div class="tab-pane fade" id="html" role="tabpanel" aria-labelledby="html-tab">
+        ${this.explicacionHTML.toBootstrapHtml()}
+      </div>
+      <div class="tab-pane fade" id="css" role="tabpanel" aria-labelledby="css-tab">
+        ${this.explicacionCSS.toBootstrapHtml()}
+      </div>
+    </div>
+    <div class="mt-4">
+      <a class="btn btn-primary" href="${this.embed}" target="_blank">Ver en JSFiddle</a>
+    </div>
+  </div>

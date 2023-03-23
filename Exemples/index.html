@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <script src="Js/Clase_Codigo.js"></script>
+    <script src="Js/Clase_Ejemplo.js"></script>
+    <script src="Js/Clase_Explicacion.js"></script>
+
+    <script src="Js/Utilitys.js"></script>
+    <script src="prism/prism.js"></script>
+    <link rel="stylesheet" href="prism/prism.css">
+
+    <link rel="stylesheet" href="./Boostrap/boostrap.css">
+    <script src="./Boostrap/boostrap.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <script src="../js/Elements.js"></script>
+    <script src="../js/Data.js"></script>
+
+</head>
+<body class="bodyAlso" id ="thebody">
+    <script>CrearNavBar()</script>
+    <div class="line-gutter-backdrop" id="test1"></div>
+    
+
+<script>
+    
+    
+    
+
+    if (comprobarNumeroEnURL()) {
+        document.write('<div id="ex">');
+        
+        fetch('./Json/'+ jsons[obtenerNumeroDeURL()])
+        .then(response => response.json())
+        .then(json => {
+        // crear una instancia de Ejemplo utilizando los datos del archivo JSON    
+        const ejemplo = Ejemplo.cargarDesdeJson(json);  
+        document.getElementById("ex").innerHTML = ejemplo.toBootstrapHtml();
+        document.title = ejemplo.nombre+" Exemple";
+        
+        Prism.highlightAll();   
+   
+  }).catch(error => console.error(error));
+
+
+        document.write("</div>");
+
+    } else {
+   
+        var idArray = new Array();
+        for (let index = 0; index < jsons.length; index++) {
+            idArray.push("ex"+index);        
+        }
+        // generarListGroupConScrollListener(jsons,idArray,"test1");
+
+        jsons.forEach(function(EjemploJson, index){
+        //Cargar tots els json
+        document.write('<div id="ex'+index+'">');
+        // leer el archivo JSON utilizando fetch
+        fetch('./Json/'+EjemploJson)
+        .then(response => response.json())
+        .then(json => {
+        // crear una instancia de Ejemplo utilizando los datos del archivo JSON    
+        const ejemplo = Ejemplo.cargarDesdeJson(json);  
+        document.getElementById("ex"+index).innerHTML = ejemplo.toBootstrapHtml();
+        document.title = "MiniExemples JavaScrpt";
+        
+        Prism.highlightAll();   
+   
+  }).catch(error => console.error(error));
+        
+  
+        document.write("</div>");
+        
+    });
+
+    }
+    
+    
+    
+
+
+
+    
+    
+  
+
+ 
+   
+        </script>
+                
+
+</body>
+</html>
+
+<!-- <script>   
+    function highlightHtmlCode($html) {
+      // Escapa las etiquetas HTML y otros caracteres especiales
+      $html = htmlspecialchars($html, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');     
+      return $html;
+  }</script> -->
+
+
