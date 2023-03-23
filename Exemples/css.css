@@ -1,0 +1,18 @@
+body {
+  background-image: url("./dalle.png");
+  background-position: center;
+  background-size: cover;
+    color: white;
+    background-attachment: fixed;
+    
+  }
+  .bodyAlso
+  {
+    background-image: url("./dalle.png");
+    background-position: center;
+    background-size: cover;
+    color: black;
+  }
+h1,.cw {
+  color: white;
+  }
